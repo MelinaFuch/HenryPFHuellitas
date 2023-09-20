@@ -1,0 +1,145 @@
+const { User, Pet, Campaign, Adoption, Donation } = require("../db.js");
+const transporter = require("../config/mailer");
+
+const createUser = async (Data) => {
+  const { email, name, image } = Data;
+  if (!email) throw new Error("Faltan datos");
+  let foundUser = await User.findOne({ where: { email: email } });
+  if (foundUser === null) {
+    foundUser = await User.create(Data);
+    await transporter.sendMail({
+      from: '"Huellitas " <tmsalbanesi@gmail.com>', // sender address
+      to: `${foundUser.dataValues.email}`, // list of receivers
+      subject: "Se ha registrado su cuenta en Huellitas",
+      html: `
+          <h1>${foundUser.dataValues.name} Bienvenido a Huellitas</h1>
+          `,
+    });
+  }
+  return foundUser;
+};
+
+const getAllUser = async (filters) => {
+  const users = await User.findAll({
+    where: filters,
+    include: [
+      {
+        model: Pet,
+        as: "giver"
+      },
+      {
+        model: Campaign,
+      },
+      {
+        model: Donation,
+        as: "donante",
+      },
+      {
+        model: Pet,
+        as: "adoptante"
+      },
+    ],
+  });
+  return users;
+};
+
+const getUserDetail = async (id) => {
+  const allUser = await getAllUser();
+  const filterDetail = allUser.map((e) => e.dataValues);
+  const userDetail = filterDetail.find((e) => e.id === Number(id));
+  if (!userDetail) throw new Error("No existe el id definido");
+  return userDetail;
+};
+
+const updateUser = async (id, data) => {
+  const userToUpdate = await User.findByPk(id);
+  if (!userToUpdate) throw new Error("No se encontró el usuario");
+  const updatedUser = await userToUpdate.update(data);
+  return updatedUser;
+};
+
+const deleteUser = async (id, status, type) => {
+  if (!id) throw new Error("No se envio el id a eliminar");
+  const userDelete = await User.update(
+    { status, type },
+    {
+      where: {
+        id,
+      },
+    }
+  );
+  return userDelete;
+};
+
+const getAllUserAdm = async (filters) => {
+  const users = await User.findAll({
+    where: filters,
+    include: [
+      {
+        model: Pet,
+        as: "adoptante"
+      },
+      {
+        model: Pet,
+        as: "giver"
+      },
+      {
+        model: Campaign,
+      },
+      {
+        model: Donation,
+        as: "donante",
+      },
+    ],
+  });
+
+  return users;
+};
+
+const getAllUserFund = async (filters) => {
+  let users;
+  if (filters) {
+    users = await User.findAll({
+      where: filters,
+      include: [
+        {
+          model: Pet, as:"giver"
+        },
+        {
+          model: Campaign,
+        },
+        {
+          model: Donation,
+          as: "donante",
+        },
+      ],
+    });
+  } else {
+    users = await User.findAll({
+      where: { status: "activo", type: "fundacion" },
+      include: [
+        {
+          model: Pet,
+        },
+        {
+          model: Campaign,
+        },
+        {
+          model: Donation,
+          as: "donante",
+        },
+      ],
+    });
+  }
+
+  return users;
+};
+module.exports = {
+  getAllUser,
+  createUser,
+  getUserDetail,
+  deleteUser,
+  updateUser,
+  getAllUserAdm,
+  getAllUserFund,
+};

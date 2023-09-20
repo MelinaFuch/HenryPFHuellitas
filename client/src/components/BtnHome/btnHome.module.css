@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Noto+Sans+JP:wght@500&family=Noto+Sans:wght@300&family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&family=Ubuntu&display=swap');
+
+.btnHome {
+    background-color: #2AADF6;
+    width: 12em;
+    height: 3.5em;
+    border: #059FF6 1px solid;
+    border-radius: 8px;
+    color: #fff;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 110%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btnHome:hover {
+    background-color: #43baf9;
+    /* box-shadow: 2px 2px 5px 2px rgba(0, 0.246, 0.246, 0.246); */
+}
+
+.btnHome:active {
+    transform: scale(0.97);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }

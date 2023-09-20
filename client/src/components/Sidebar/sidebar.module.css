@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&family=Noto+Sans+JP:wght@500;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 300px;
+  height: fit-content;
+  padding-bottom: 30px;
+  background: #c2f4ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 100px 0px;
+}
+
+.selectBox {
+  width: 184px;
+  height: 44px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  background-color: #44b7ff;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 100%;
+}
+
+.btn {
+  width: 184px;
+  height: 44px;
+  margin-top: 30px;
+  background: #44b7ff;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 14px;
+  border: none;
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 100%;
+  margin-left: 50px;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background-color: #5dc1ff;
+  transition: 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.search {
+  background-color: #44b7ff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  /* margin-left: 0%; */
+  font-size: 110%;
+  color: rgb(255, 255, 255);
+  outline: none;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.search::placeholder {
+  color: white;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.searchButton {
+  background-color: transparent;
+  scale: 150%;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -12%;
+  position: relative;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.searchButton:hover {
+  color: white;
+}
+
+.restoreButton {
+  background-color: #44b7ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 100%;
+  text-align: middle;
+  text-decoration: none;
+  width: 184px;
+  white-space: nowrap;
+  margin-left: -5%;
+  margin-top: 30px;
+}
+
+.restoreButton:hover {
+  background-color: #5dc1ff;
+  color: white;
+  transition: 0.2s;
+}
+
+.restoreButton:active {
+  transform: scale(0.97);
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
+}
+
+.newsearch {
+  display: flex;
+  flex-direction: row;
+}
+
+.kms{
+  background-color: #44b7ff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 110%;
+  color: rgb(255, 255, 255);
+  outline: none;
+  margin-right: 20px;
+  margin-left: -10px;
+  width: 20%;
+  text-align: center;
+}
+.kms::placeholder {
+  color: white;
+  font-family: "Poppins";
+  font-weight: 300;
+}
+.kmsbtn{
+  width: 80px;
+  height: 44px;
+  background: #44b7ff;
+  border-radius: 14px;
+  border: none;
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 100%;
+  color: #ffffff;
+}
+.kmsbtn:hover {
+  background-color: #5dc1ff;
+  transition: 0.2s;
+}
+.formkms{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* RESPONSIVE PARA DISPOSITIVOS HASTA 760PX */
+@media (max-width: 768px) {
+  .container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: grid;
+    height: 550px;
+    background: #c2f4ff;
+    border-radius: 0;
+
+
+    /* background-color: rgb(147, 119, 119); */
+  }
+  
+  .selectBox {
+    width: 80%;
+    height: 44px;
+    margin: 1em auto;
+    background-color: #44b7ff;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 100%;
+
+    /* background-color: #3e5b6d; */
+  }
+  
+  .btn {
+    width: 80%;
+    height: 100px;
+    margin: 1em auto;
+    background-color: #44b7ff;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 100%;
+
+  }
+  
+  .btn:hover {
+    background-color: #5dc1ff;
+    transition: 0.2s;
+  }
+  
+  .btn:active {
+    transform: scale(0.97);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+  }
+  
+  .search {
+    background-color: #44b7ff;
+    border: none;
+    font-size: 110%;
+    color: rgb(255, 255, 255);
+    width: 76%;
+    
+  }
+  
+  .search::placeholder {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: .8em;
+    width: 100%;
+  }
+  
+  .searchButton {
+    background-color: transparent;
+    scale: 150%;
+    color: black;
+    border: none;
+    top: -62px;
+    left: 150px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: -12%;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .searchButton:hover {
+    color: white;
+  }
+  
+  .toggle {
+    width: 10%;
+    margin: 2em auto;
+    background-color: #44b7ff;
+    border-radius: 50%;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 150%;
+    line-height: 10px;
+    padding: 5px;
+  }
+  
+  .toggle.visible {
+    width: 10%;
+    margin: 1em auto;
+    background-color: #44b7ff;
+    border-radius: 50%;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 150%;
+    line-height: 10px;
+    padding: 5px;
+    rotate: 180deg;
+  }
+  
+  .restoreButton {
+    width: 80%;
+    height: 44px;
+    margin: 1em auto;
+    background-color: #44b7ff;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 100%;
+    margin-top: -10px;
+  }
+  
+  .restoreButton:hover {
+    background-color: #5dc1ff;
+    color: white;
+    transition: 0.2s;
+  }
+  
+  .restoreButton:active {
+    transform: scale(0.97);
+  }
+  
+  
+  .newsearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .sidebar {
+    position: absolute;
+    top: -315px;
+    height: 76%;
+    width: 100%;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out;
+    /* background-color: beige; */
+  }
+  
+  .sidebar.expanded {
+    transform: translateY(491px);
+  }
+  .kms{
+    background-color: #44b7ff;
+    border: none;
+    border-radius: 10px;
+    font-size: 110%;
+    color: rgb(255, 255, 255);
+    outline: none;
+    margin-right: 20px;
+    margin-left: -10px;
+    width: 20%;
+    height: 15px ;
+    text-align: center;
+  }
+  .kms::placeholder {
+    color: white;
+    font-family: "Poppins";
+    
+  }
+  .kmsbtn{
+    width: fit-content;
+    height: 35px;
+    background: #31a7f1;
+    border-radius: 8px;
+    border: none;
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 100%;
+    color: #ffffff;
+  }
+  .kmsbtn:hover {
+    background-color: #5dc1ff;
+    transition: 0.2s;
+  }
+  .formkms{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+   margin-bottom: 10px;
+  }
+}

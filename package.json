@@ -1,0 +1,12 @@
+{
+  "name": "pf_huellitas",
+  "version": "1.0.0",
+  "description": "Portal en linea para adopción responsable de mascotas y apoyo a organizaciones que colaboran con el rescate y cuidado de animales domésticos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
